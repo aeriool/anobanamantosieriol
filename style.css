@@ -1,0 +1,106 @@
+body {
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background: linear-gradient(135deg,#ffe6f0,#fff0f5);
+}
+
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(15px);
+  padding:30px;
+  border-radius:25px;
+  width:360px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  text-align:center;
+  overflow:hidden;
+  z-index:1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.question {
+  display:none;
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.question.active {
+  display:block;
+  opacity:1;
+  transform: translateY(0);
+}
+
+.input-container {
+  position: relative;
+  margin-top: 12px;
+}
+
+.input-container input {
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.4);
+  font-size:14px;
+  box-sizing:border-box;
+  background: rgba(255,255,255,0.3);
+  color: #333;
+}
+.input-container input:focus {
+  outline:none;
+  border-color:#ff4d7a;
+  box-shadow:0 0 8px rgba(255,77,122,0.5);
+}
+
+/* Floating hearts in input containers */
+.input-container .heart {
+  position: absolute;
+  top: -10px;
+  font-size: 14px;
+  color: #ff4d7a;
+  pointer-events: none;
+  animation: floatHearts 3s linear infinite;
+  opacity: 0.6;
+}
+@keyframes floatHearts {
+  0% { transform: translateY(0) scale(1); opacity:0.6; }
+  50% { transform: translateY(-15px) scale(1.2); opacity:0.8; }
+  100% { transform: translateY(0) scale(1); opacity:0.6; }
+}
+
+/* BUTTON */
+button {
+  background:#ff4d7a;
+  color:white;
+  border:none;
+  margin-top:20px;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+  border-radius:20px;
+}
+button:hover {
+  background:#ff2f66;
+  transform: scale(1.05);
+}
+
+/* PROGRESS BAR */
+.progress {
+  height:6px;
+  width:100%;
+  background: rgba(255,255,255,0.3);
+  border-radius:3px;
+  margin-top:20px;
+  overflow:hidden;
+}
+.progress-bar {
+  height:100%;
+  width:0%;
+  background:#ff4d7a;
+  border-radius:3px;
+  transition: width 0.4s ease;
+}
