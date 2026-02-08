@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Survey</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(160deg, #ffe6f0, #fff0f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 25px;
+    width: 360px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+
+  h2 {
+    text-align: center;
+    color: #ff4d7a;
+    margin-bottom: 5px;
+  }
+
+  p.description {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  input, textarea, button {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  button {
+    background: #ff4d7a;
+    color: white;
+    border: none;
+    margin-top: 22px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #ff2f66;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Survey</h2>
+  <p class="description">idk</p>
+
+  <label>Music taste?</label>
+  <input id="music" type="text">
+
+  <label>Song you never skip?</label>
+  <input id="song" type="text">
+
+  <label>Favorite food?</label>
+  <input id="food" type="text">
+
+  <label>Comfort food?</label>
+  <input id="comfort" type="text">
+
+  <label>Hobbies?</label>
+  <input id="hobby" type="text">
+
+  <label>Something you’re lowkey good at?</label>
+  <input id="skill" type="text">
+
+  <label>Introvert or extrovert?</label>
+  <input id="personality" type="text">
+
+  <label>Ideal chill day?</label>
+  <textarea id="chill" rows="2"></textarea>
+
+  <label>Pet peeve?</label>
+  <input id="petpeeve" type="text">
+
+  <label>Small thing that makes you smile?</label>
+  <input id="smile" type="text">
+
+  <label>Late-night talks or random memes?</label>
+  <input id="talks" type="text">
+
+  <label>Coffee or milktea?</label>
+  <input id="drink" type="text">
+
+  <label>Beach or mountains?</label>
+  <input id="place" type="text">
+
+  <button onclick="submitSurvey()">Done</button>
+</div>
+
+<script>
+function submitSurvey() {
+  const message =
+    "My answers 😌\n\n" +
+    "Music taste: " + music.value + "\n" +
+    "Never skip song: " + song.value + "\n" +
+    "Favorite food: " + food.value + "\n" +
+    "Comfort food: " + comfort.value + "\n" +
+    "Hobbies: " + hobby.value + "\n" +
+    "Lowkey skill: " + skill.value + "\n" +
+    "Introvert/Extrovert: " + personality.value + "\n" +
+    "Ideal chill day: " + chill.value + "\n" +
+    "Pet peeve: " + petpeeve.value + "\n" +
+    "Makes you smile: " + smile.value + "\n" +
+    "Talks or memes: " + talks.value + "\n" +
+    "Coffee or milktea: " + drink.value + "\n" +
+    "Beach or mountains: " + place.value;
+
+  navigator.clipboard.writeText(message);
+  alert("Copied 😳 Send it to me!");
+}
+</script>
+
+</body>
+</html>>
